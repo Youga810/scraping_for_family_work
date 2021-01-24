@@ -7,7 +7,7 @@ $cnt = 0;
 $text_path = "compare.txt";
 
 function alert(){
-  $url = "https://hooks.slack.com/services/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";
+  $url = "https://hooks.slack.com/services/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";
   $message = [
       "channel" => "#alert",
       "text" => "サイトに更新が加えられた可能性アリ：https://kaminagakinokoen.ocnk.net/product-list/15",
@@ -50,10 +50,14 @@ $source = $html->find('#pagetd')[0];
 $current_text = @file_get_contents( $text_path );
 $current_text = hash('sha256',$current_text);
 $hashed_source = hash('sha256',$source);
+
+echo "current_text:".$current_text."<br>";
+echo "hashed_source:".$hashed_source;
 if( $current_text !== $hashed_source ) {
     // 前の文字列と異なる場合、メールを送信
     alert();
     file_put_contents( $text_path, $source );
+    echo "うまいこといってるよ";
   } else {
     // 変更がない場合スルー
   }
