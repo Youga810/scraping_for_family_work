@@ -7,10 +7,10 @@ $cnt = 0;
 $text_path = "compare.txt";
 
 function alert(){
-  $url = "https://hooks.slack.com/services/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";
+  $url = "https://hooks.slack.com/services/*******************************";
   $message = [
       "channel" => "#alert",
-      "text" => "サイトに更新が加えられた可能性アリ：https://kaminagakinokoen.ocnk.net/product-list/15",
+      "text" => "サイトに更新が加えられた可能性アリ：https://*******************************",
       "username" => "AlertBot",
   ];
   
